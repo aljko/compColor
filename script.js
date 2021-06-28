@@ -1,6 +1,7 @@
 function randColor(){
     return '#'+(Math.random()*0xFFFFFF<<0).toString(16);
     // Création d'un couleur aléatoire
+    // Creer une condition pour gerer les >6 chiffres.
 }
 
 function compColor(color){
