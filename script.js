@@ -1,8 +1,27 @@
 function randColor(){
     let response = (Math.random()*0xFFFFFF<<0).toString(16);
     // Création d'une couleur aléatoire
-    if (response.length == 5){
-        response = "0"+response;
+    switch(response.length){
+        case 6:
+            break;
+        case 5:
+            response = '0' + response;
+            break;
+        case 4:
+            response = '00' + response;
+            break;
+        case 3:
+            response = '000' + response;
+            break;
+        case 2:
+            response = '0000' + response;
+            break;
+        case 1:
+            response = '00000' + response;
+            break;
+        case 0:
+            response = '000000' + response;
+            break;
     }
     // Creer une condition pour gerer les >6 chiffres.
     return '#'+ response;
@@ -10,8 +29,28 @@ function randColor(){
 
 function compColor(color){
     let response = (0xffffff - ('0x'+(color.substring(1)))).toString(16);
-    if (response.length == 5){
-        response = "0"+response;
+    switch(response.length){
+        case 6:
+            break;
+        case 5:
+            response = '0' + response;
+            break;
+        case 4:
+            response = '00' + response;
+            couple.style.border = 'medium solid red';
+            break;
+        case 3:
+            response = '000' + response;
+            break;
+        case 2:
+            response = '0000' + response;
+            break;
+        case 1:
+            response = '00000' + response;
+            break;
+        case 0:
+            response = '000000' + response;
+            break;
     }
     // Creer une condition pour gerer les >6 chiffres.
     return '#' + response;
@@ -22,11 +61,12 @@ document.body.appendChild(book);
 book.style.display = 'flex';
 book.style.flexDirection = 'row';
 book.style.flexWrap = 'wrap';
+book.style.justifyContent = 'center';
 
 for(let i=0; i<100; i++){
     let couple =  document.createElement('div');
     //
-    couple.style.border = "medium solid #000000";
+    couple.style.border = 'medium solid #000000';
     //
     document.body.appendChild(couple);
     //
