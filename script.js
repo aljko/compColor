@@ -9,10 +9,21 @@ function randColor(){
 }
 
 function compColor(color){
-    return '#'+ (0xffffff - ('0x'+(color.substring(1)))).toString(16)
+    let response = (0xffffff - ('0x'+(color.substring(1)))).toString(16);
+    if (response.length == 5){
+        response = "0"+response;
+    }
+    // Creer une condition pour gerer les >6 chiffres.
+    return '#' + response;
 }
 
-for(let i=0; i<2; i++){
+let book = document.createElement('div');
+document.body.appendChild(book);
+book.style.display = 'flex';
+book.style.flexDirection = 'row';
+book.style.flexWrap = 'wrap';
+
+for(let i=0; i<100; i++){
     let couple =  document.createElement('div');
     //
     couple.style.border = "medium solid #000000";
@@ -50,4 +61,6 @@ for(let i=0; i<2; i++){
     // Ajout au DOM
     couple.appendChild(newCubeComp);
     //
+
+    book.appendChild(couple);
 }
