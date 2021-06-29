@@ -37,7 +37,6 @@ function compColor(color){
             break;
         case 4:
             response = '00' + response;
-            couple.style.border = 'medium solid red';
             break;
         case 3:
             response = '000' + response;
@@ -57,17 +56,20 @@ function compColor(color){
 }
 
 let book = document.createElement('div');
+document.body.style.fontFamily =  'sans-serif'
 document.body.appendChild(book);
 book.style.display = 'flex';
 book.style.flexDirection = 'row';
 book.style.flexWrap = 'wrap';
 book.style.justifyContent = 'center';
 
-for(let i=0; i<100; i++){
+for(let i=0; i<33; i++){
     let couple =  document.createElement('div');
     //
     couple.style.border = 'medium solid #000000';
     //
+    couple.style.borderRadius = "5px";
+    
     document.body.appendChild(couple);
     //
 
@@ -75,6 +77,7 @@ for(let i=0; i<100; i++){
     // Création d'un nouvel élément div
     let newCubeColor = randColor();
     // Création de la variable contenant la couleur
+    newCube.style.textAlign = 'center';
     newCube.textContent = newCubeColor;
     // Inscription de l'héxa de couleur
     newCube.style.backgroundColor = newCubeColor;
@@ -92,6 +95,7 @@ for(let i=0; i<100; i++){
     // Création de la variable contenant la couleur
     newCubeComp.textContent = newCubeCompColor;
     // Inscription de l'héxa de la couleur
+    newCubeComp.style.textAlign = 'center';
     newCubeComp.style.backgroundColor = newCubeCompColor;
     // Application de la nouvelle couleur
     newCubeComp.style.width = '150px';
